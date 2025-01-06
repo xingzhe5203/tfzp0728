@@ -1,7 +1,4 @@
-# 一、静态代码生成
-
-```java
-package com.yupi.generator;
+package com.xingzhe.generator;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.ArrayUtil;
@@ -28,14 +25,13 @@ public class StaticGenerator {
     }
 
     public static void main(String[] args) {
-        // 获取整个项目的根路径
+
+        /**
+         * 获取整个项目的根路径
+          */
         String projectPath = System.getProperty("user.dir");
-        File parentFile = new File(projectPath);
-        // 输入路径：ACM 示例代码模板目录
-        //String inputPath1 = new File(parentFile, "yuzi-generator-demo-projects/acm-template").getAbsolutePath();
-        
         String inputPath = projectPath + File.separator + "yuzi-generator-demo-projects"+ File.separator+ "acm-template";
-       
+        System.out.println(inputPath);
         // 输出路径：直接输出到项目的根目录
         String outputPath = projectPath;
         copyFilesByHutool(inputPath, outputPath);
@@ -43,7 +39,7 @@ public class StaticGenerator {
 
     /**
      * 递归拷贝文件（递归实现，会将输入目录完整拷贝到输出目录下）
-     * @param inputPath                                                                                   
+     * @param inputPath
      * @param outputPath
      */
     public static void copyFilesByRecursive(String inputPath, String outputPath) {
@@ -93,8 +89,3 @@ public class StaticGenerator {
         }
     }
 }
-
-```
-
-
-
